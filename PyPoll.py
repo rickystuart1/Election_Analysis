@@ -38,6 +38,7 @@ with open(file_to_load) as election_data:
             candidate_votes[candidate_name] = 0 
         #add a vote to the candidate count 
         candidate_votes[candidate_name] += 1 
+        #save to text file
     with open(file_to_save,"w") as txt_file:
         election_results = (
             f"\nElection Results\n"
@@ -45,6 +46,7 @@ with open(file_to_load) as election_data:
             f'Total Votes: {total_votes:,}\n'
             f'-------------------------\n')
         print(election_results, end="")
+        #write to text file
         txt_file.write(election_results)
         #iterate through candidare list       
         for candidate_name in candidate_votes:
@@ -60,11 +62,12 @@ with open(file_to_load) as election_data:
                 winning_percentage = vote_percentage
                 # set winning candidate to candidates name
                 winning_candidate = candidate_name
+                #write to text file
             candidate_results = (
                 f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
             print(candidate_results)
             txt_file.write(candidate_results)
-
+            #print winning results to text file
         winning_candidate_summary = (
             f'-------------------------\n'
             f'Winner: {winning_candidate}\n'
@@ -72,18 +75,5 @@ with open(file_to_load) as election_data:
             f'Winning Percentage: {winning_percentage:.1f}%\n'
             f'-------------------------\n')
         print(winning_candidate_summary)
+        #save to text file
         txt_file.write(winning_candidate_summary)
-
-        
-
-
-
-    #1 The total number of votes cast
-
-    #2 A complete list of canidates
-
-    #3 The percentage of votes each canidate won
-
-    #4 The total number of votes each candidate won
-
-    #5 The winner of the election based on popular vote

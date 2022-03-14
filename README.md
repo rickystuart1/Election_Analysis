@@ -42,4 +42,6 @@ After running the code the results were displayed on a text file shown below.
 <img src="Resources/Election_Analysis_Results_txt.png" >
 
 # Election-Audit Summary
-I believe this script can be use to count serve 
+This python code is flexible enough to handle any other election in any region, with just minor modifications. For example, if the commission wanted to use this code to count the votes for a Congressional election, which would included the entire state of Colorado, they would just need to clean any new data and make sure the dataset for the new vote count is in the same format as the one originally used. Little to no changes to the code would be needed and the output would show every county involved, show the candidates who ran and their percentages. 
+
+If you wanted to know what precincts in each county voted in the election, the code is also flexible enough to be able out put information on this variable with just a few additions to the code. You would need the data sheet csv to add a column that shows what precinct each voter was from. Then add a dictionary and list for the precinct options and votes from each precinct. You would need to set up a counter for the precinct votes and then add a for loop to the code to run any calculations. Add an f string to out put results and write it to the text file. 
